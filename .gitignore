@@ -1,3 +1,4 @@
 .user.yml
 logs/
 .venv/
+.DS_Store
