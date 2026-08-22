@@ -17,6 +17,7 @@ models:
         - accepted_values:
             arguments:
               values: ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room']
+
   - name: dim_hosts_cleansed
     columns:
     - name: host_id
@@ -31,3 +32,24 @@ models:
         - accepted_values:
             arguments:
               values: ['t', 'f']
+
+  - name: fct_reviews
+    columns:
+    - name: listing_id
+      data_tests:
+        - not_null
+        - relationships:
+            arguments:
+              to: ref('dim_listings_cleansed')
+              field: listing_id
+    - name: review_date
+      data_tests:
+        - not_null
+    - name: reviewer_name
+      data_tests:
+        - not_null
+    - name: review_sentiment
+      data_tests:
+        - accepted_values:
+            arguments:
+              values: ['positive', 'neutral', 'negative']
