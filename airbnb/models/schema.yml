@@ -29,12 +29,13 @@ models:
   - name: dim_hosts_cleansed
     columns:
     - name: host_id
+      constraints:
+        - type: not_null
       data_tests:
         - unique
-        - not_null
     - name: host_name
-      data_tests:
-        - not_null
+      constraints:
+        - type: not_null
     - name: is_superhost
       data_tests:
         - accepted_values:
