@@ -32,29 +32,35 @@ models:
         - positive_values
 
   - name: dim_hosts_cleansed
+    description: Cleansed dimension table containing host profile information and superhost status.
     config:
       contract:
         enforced: true    
     columns:
     - name: host_id
+      description: Unique identifier for each host. Primary key.
       data_type: integer
       constraints:
         - type: not_null
       data_tests:
         - unique
     - name: host_name
+      description: Name of the host as listed on their profile.
       data_type: string
       constraints:
         - type: not_null
     - name: is_superhost
+      description: Flag indicating whether the host has superhost status ('t' for True, 'f' for False).
       data_type: string
       data_tests:
         - accepted_values:
             arguments:
               values: ['t', 'f']
     - name: updated_at
+      description: Timestamp indicating when the host profile was last modified.
       data_type: timestamp
     - name: created_at
+      description: Timestamp indicating when the host profile was created.
       data_type: timestamp
 
   - name: fct_reviews
