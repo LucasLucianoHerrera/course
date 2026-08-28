@@ -63,6 +63,12 @@ models:
       description: Timestamp indicating when the host profile was created.
       data_type: timestamp
 
+  - name: dim_listings_w_hosts
+    tests:
+      - dbt_expectations.expect_table_row_count_to_equal_other_table:
+          arguments:
+            compare_model: source('airbnb','listings')
+
   - name: fct_reviews
     columns:
     - name: review_id
