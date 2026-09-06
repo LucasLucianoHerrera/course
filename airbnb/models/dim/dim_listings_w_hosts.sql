@@ -4,7 +4,7 @@ with l as (
 ),
 h as (
     select *
-    from {{ref('dim_hosts_cleansed')}}
+    from {{ref('dim_hosts_cleansed', v=2)}}
 )
 
 select
