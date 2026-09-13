@@ -1,4 +1,14 @@
-.user.yml
+target/
+target-prod/
+target*/
+dbt_packages/
+dbt_internal_packages/
+package-lock.yml
 logs/
-.venv/
+profiles.yml
+.user.yml
+.env
 .DS_Store
+set-env.sh
+set-env.ps1
+.vscode/
