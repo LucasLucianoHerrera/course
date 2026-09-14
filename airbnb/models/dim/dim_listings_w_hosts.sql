@@ -12,7 +12,7 @@ select
     l.listing_name,
     l.room_type,
     l.minimum_nights,
-    l.price,
+    l.price AS price_usd,
     l.host_id,
     h.host_name,
     h.is_superhost as host_is_superhost,
