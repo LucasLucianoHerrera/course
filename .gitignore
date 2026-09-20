@@ -12,3 +12,5 @@ profiles.yml
 set-env.sh
 set-env.ps1
 .vscode/
+!_prod_profiles/
+!_prod_profiles/*
